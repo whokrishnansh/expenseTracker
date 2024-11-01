@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expense Tracker</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+      <h1>Expense Tracker</h1>
+    </header>
+
+    <main>
+      <div class="dashboard">
+        <div class="chart-container">
+          <div class="chart-card">
+            <h2>Expense Distribution</h2>
+            <canvas id="pieChart"></canvas>
+          </div>
+          <div class="chart-card">
+            <h2>Monthly Spending</h2>
+            <canvas id="barChart"></canvas>
+          </div>
+        </div>
+
+        <div class="stats-container">
+          <div class="stat-card">
+            <h3>Total Spent</h3>
+            <p id="totalSpent">₹0.00</p>
+          </div>
+          <div class="stat-card">
+            <h3>Categories</h3>
+            <p id="totalCategories">0</p>
+          </div>
+          <div class="stat-card">
+            <h3>Total Transactions</h3>
+            <p id="totalTransactions">0</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="expense-section">
+        <form id="expenseForm" class="expense-form">
+          <input type="text" id="description" placeholder="Description" required>
+          <input type="number" id="amount" placeholder="Amount" step="0.01" required>
+          <select id="category" required>
+            <option value="">Select Category</option>
+            <option value="Food">Food</option>
+            <option value="Transport">Transport</option>
+            <option value="Entertainment">Entertainment</option>
+            <option value="Shopping">Shopping</option>
+            <option value="Bills">Bills</option>
+          </select>
+          <button type="submit">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v8"/><path d="M8 12h8"/></svg>
+            Add Expense
+          </button>
+        </form>
+
+        <div class="expense-list">
+          <h2>Recent Expenses</h2>
+          <div id="expenseItems"></div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer class="footer">
+    <p>&copy; 2024 Expense Tracker Web App by Krishnansh Sharma</p>
+    <a href="http://www.github.com/whokrishnansh"><img src="/img/githubLogo.png" alt="githubLogo"></a>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>
